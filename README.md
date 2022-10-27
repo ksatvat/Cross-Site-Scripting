@@ -19,8 +19,9 @@ In the XSS, the malicious input is sent to the browser in the form of JavaScript
 
 For the browser to render the HTML response or other documents that may execute scripts, it has to specify a text/HTML MIME type. Therefore, XSS is only possible if the response uses this MIME type or any other that also forces the browser to render the response as HTM. Other extensions   such as SVG images (image/svg+xml), XML documents (application/XML), etc may also allow execution of scripts.
 
-Most modern browsers will not render HTML, nor execute scripts when provided a response with MIME types such as application/json. However, some browsers such as Internet Explorer perform what is known as Content Sniffing. Content Sniffing involves ignoring the provided MIME type and attempting to infer the correct MIME type by the contents of the response.
-It is worth noting however, a MIME type of text/html is only one such MIME type that may lead to XSS vulnerabilities. Other documents that may execute scripts such as SVG images (image/svg+xml), XML documents (application/xml), as well as others may lead to XSS vulnerabilities regardless of whether the browser performs Content Sniffing.
+Most contemporary browsers will not allow the execution of scripts or rendering HTML when the response includes MIME types such as application JSON. However, Content Sniffing which involves ignoring the provided MIME type and attempting to infer the correct MIME type by the contents of the response may be possible using some browsers such as Internet Explorer.  
+A MIME type of text/HTML is not the only MIME type that may lead to XSS vulnerabilities. 
+More advanced payloads may appear as SVG images (image/svg+xml), XML documents (application/XML), or other types.
 
 Therefore, a response such as <html><body><script>alert(1)</script></body></html>, could be rendered as HTML even if its content-type header is set to application/json.
 
