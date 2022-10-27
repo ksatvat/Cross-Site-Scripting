@@ -1,10 +1,12 @@
-# Cross-Site-Scripting
+# Cross-Site-Scripting (XSS)
 
 
 ## Cross-Site Scripting: Content Sniffing
 
-### Abstract
-Sending unvalidated data to a web browser may result in certain browsers executing malicious code.
+### Summary (fixed)
+Cross-site scripting (a.k.a XSS) is a web security vulnerability that allows an attacker to compromise users' interactions with a vulnerable application. XSS allows an attacker to bypass the origin policy, through sending invalid input to a web browser which in vulnerable applications can result in execution of malicious code through the browser. XSS enables the attacker to masquerade as a victim user and access any of the user's data. If the victim user has privileged access within the application, then the attacker might be able to gain full control over all of the application's functionality and data.
+
+
 ### Explanation
 Cross-site scripting (XSS) vulnerabilities occur when:
 
