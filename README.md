@@ -13,7 +13,7 @@ Cross-site scripting (XSS) vulnerabilities occur when:
 1. Data enters a web application through an untrusted source. In the case of reflected XSS, the untrusted source is typically a web request, while in the case of persisted (also known as stored) XSS it is typically a database or other back-end data store.
 
 
-2. The data is included in dynamic content that is sent to a web user without validation.
+2. The malicious payload is included in dynamic content that is sent to a web user. This vulnerabiliry occurs due to the lack of proper input validation.
 
 The malicious content sent to the web browser often takes the form of a JavaScript segment, but may also include HTML, Flash or any other type of code that the browser executes. The variety of attacks based on XSS is almost limitless, but they commonly include transmitting private data such as cookies or other session information to the attacker, redirecting the victim to web content controlled by the attacker, or performing other malicious operations on the user's machine under the guise of the vulnerable site.
 
