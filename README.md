@@ -23,7 +23,7 @@ Most contemporary browsers will not allow the execution of scripts or rendering 
 A MIME type of text/HTML is not the only MIME type that may lead to XSS vulnerabilities. 
 More advanced payloads may appear as SVG images (image/svg+xml), XML documents (application/XML), or other types.
 
-Therefore, a response such as <html><body><script>alert(1)</script></body></html>, could be rendered as HTML even if its content-type header is set to application/json.
+Therefore, a response such as <html><body><script>alert("XSS Attack Sample")</script></body></html>, could be rendered as HTML even if its content-type header is set to application/json.
 
 Example 1: The following AWS Lambda function reflects user data in an application/json response.
 
