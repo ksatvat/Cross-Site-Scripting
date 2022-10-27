@@ -28,11 +28,11 @@ Therefore, a response such as <html><body><script>alert(1)</script></body></html
 Example 1: The following AWS Lambda function reflects user data in an application/json response.
 
 ```
-def mylambda_handler(event, context):
-    name = event['name']
+def lambda_handler(event, context):
+    message = event['message']
     response = {
         "statusCode": 200,
-        "body": "{'name': name}",
+        "body": "{'message': message}",
         "headers": {
             'Content-Type': 'application/json',
         }
@@ -40,7 +40,7 @@ def mylambda_handler(event, context):
     return response
 ```
 
-If an attacker sends a request with the name parameter set to <html><body><script>alert(1)</script></body></html>, the server will produce the following response:
+If an attacker sends a request with the name parameter set to <html><body><script>alert-(1)</script></body></html>, the server will produce the following response:
 
 ```
 HTTP/1.1 200 OK
