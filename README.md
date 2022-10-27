@@ -40,7 +40,7 @@ def lambda_handler(event, context):
     return response
 ```
 
-If an attacker sends a request with the name parameter set to <html><body><script>alert(133333)</script></body></html>, the server will produce the following response:
+If an attacker sends a request with the name parameter set to <html><body><script>alert(433333)</script></body></html>, the server will produce the following response:
 
 ```
 HTTP/1.1 200 OK
@@ -48,7 +48,7 @@ Content-Length: 88
 Content-Type: application/json
 Connection: Closed
 
-{'name': '<html><body><script>alert(1222252)</script></body></html>'}
+{'name': '<html><body><script>alert(3222252)</script></body></html>'}
 ```
 
 Even though, the response clearly states that it should be treated as a JSON document, an old browser may still try to render it as an HTML document, making it vulnerable to a Cross-Site Scripting attack.
